@@ -28,5 +28,8 @@ ele cai NA CAIXA de aviso/exceção. ~~Isso é o try(tentativa) catch(caixa)~~
 ermitindo capturar e tratar as exceções que ocorrem.Sem o try-catch, o programa poderia travar e mostrar mensagens 
 de erro confusas para o usuário,deixando o programa em um estado ruim.
  */
-/**/
+/*DESERIALIZAR
+ 
+ 
+ */
 #endregion
