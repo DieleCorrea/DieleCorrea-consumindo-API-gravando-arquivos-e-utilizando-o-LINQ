@@ -8,7 +8,7 @@ using (HttpClient client = new HttpClient())
     
     try 
     { 
-    string resposta =await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.jso");
+    string resposta =await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
     Console.WriteLine(resposta);
         #region deserialização
         //Preciso ACESSAR as propriedades que estão na classe Musica,
@@ -19,8 +19,9 @@ using (HttpClient client = new HttpClient())
         LinqFilter.FiltrarTodosOsGenerosMusicais(musicas);
     }
     catch (Exception ex) 
-    { Console.WriteLine($"Temos um problema: {ex.Message}"); }
-     //pegar o json para apontar para a classe musica 
+    { Console.WriteLine($"Temos um problema: {ex.Message}");
+        //pegar o json para apontar para a classe musica 
+    }
 }
 
 
