@@ -1,5 +1,4 @@
 ﻿using CsharpApiLInq.Modelos;
-using System.Net.Http.Json;
 using System.Text.Json;
 //recurso para fazer requisições, não usamos o ":" pois vamos usar esse recurso so dentro do using //quando a chave fecha, liberamos o recurso objeto client 
 using (HttpClient client = new HttpClient())
