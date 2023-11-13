@@ -9,7 +9,7 @@ using (HttpClient client = new HttpClient())
     try
     {
         string resposta = await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
-        Console.WriteLine(resposta);
+        //Console.WriteLine(resposta);
         #region deserialização
         //Preciso ACESSAR as propriedades que estão na classe Musica,
         //mas nesse caso estao em json e para isso eu faço uma conversão de json para
@@ -17,7 +17,8 @@ using (HttpClient client = new HttpClient())
         #endregion
         var musicas = JsonSerializer.Deserialize<List<Musica>>(resposta)!;// vai pegar o o meu jso que está na string RESPOSTA e ai converter ele (deserialize) para uma lista do tipo da classe MUSICA e joar para a var musicas 
         //LinqFilter.FiltrarTodosOsGenerosMusicais(musicas);
-        LinqFilter.FiltrarArtistasPorGeneroMusical(musicas, "pop");
+        //LinqFilter.FiltrarArtistasPorGeneroMusical(musicas, "pop");
+        LinqFilter.FiltrarMusicasDeUmArtista(musicas, "U2");
     }
     catch (Exception ex)
     {
@@ -25,5 +26,6 @@ using (HttpClient client = new HttpClient())
         //pegar o json para apontar para a classe musica 
     }
 }
+
 
 
