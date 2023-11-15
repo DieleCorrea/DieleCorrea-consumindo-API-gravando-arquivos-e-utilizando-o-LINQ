@@ -18,7 +18,8 @@ using (HttpClient client = new HttpClient())
         var musicas = JsonSerializer.Deserialize<List<Musica>>(resposta)!;// vai pegar o o meu jso que está na string RESPOSTA e ai converter ele (deserialize) para uma lista do tipo da classe MUSICA e joar para a var musicas 
         //LinqFilter.FiltrarTodosOsGenerosMusicais(musicas);
         //LinqFilter.FiltrarArtistasPorGeneroMusical(musicas, "pop");
-        LinqFilter.FiltrarMusicasDeUmArtista(musicas, "U2");
+        //LinqFilter.FiltrarMusicasDeUmArtista(musicas, "U2");
+        LinqFilter.FiltrarMusicasPorAno(musicas, "2010");
     }
     catch (Exception ex)
     {
