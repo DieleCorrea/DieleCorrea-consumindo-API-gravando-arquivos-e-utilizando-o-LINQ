@@ -34,5 +34,14 @@ internal class LinqFilter
             Console.WriteLine($"- {musica.Nome}");
         }
     }
+    public static void FiltrarMusicasPorAno(List<Musica> musicas, string anoDaMusica)
+    {
+        var musicasPorAno = musicas.Where(musica => musica.AnoString!.Equals(anoDaMusica)).Select(musica => musica.Nome).Distinct().ToList();
+        Console.WriteLine($"Exibindos as musicas mais tocadas de: {anoDaMusica}");
+        foreach( var item in musicasPorAno)
+        {
+            Console.WriteLine($"-{item}");
+        }
+    }
 
 }
