@@ -15,7 +15,7 @@ internal class Musica
     public string? Genero { get; set;}// o "?" é que pode ser nula 
     [JsonPropertyName("year")]
     public string AnoString { get; set; }
-    public int Ano => int.Parse(AnoString);
+    //public int Ano => int.Parse(AnoString);
 
     public void ExibirDetalhesDamusica()
     {
