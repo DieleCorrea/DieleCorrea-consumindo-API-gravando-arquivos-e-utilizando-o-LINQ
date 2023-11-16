@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Globalization;
+using System.Text.Json;
 namespace CsharpApiLInq.Modelos;
 /*Essa classe estou criando pois quero transformar as informações que tenho no meu arquivo c# em json
   */
@@ -50,4 +51,21 @@ internal class MusicasPreferidas
         //Para ver o arquivo posso abrir o vs code 
     }
 
+    public void GerarDocumentoTXTComAsMusicasFavoritas()
+    {
+        //cria o nome do arquivo do tipo txt 
+        string nomeDoArquivo = $"musicas-favoritas-{Nome}.txt";
+
+        //instancia a classe StresmWriter que serve pra isso 
+        using (StreamWriter arquivo =  new StreamWriter(nomeDoArquivo)) 
+        {
+            arquivo.WriteLine($"Músicas favotiras do {Nome}\n");
+            foreach(var musica in ListaDeMusicasFavoritas)
+            {
+                arquivo.WriteLine($"- {musica.Nome}");
+
+            }
+            Console.WriteLine("txt gerado com sucesso!");
+        }
+    }
 }
