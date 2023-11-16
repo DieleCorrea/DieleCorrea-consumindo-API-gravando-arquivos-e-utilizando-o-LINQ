@@ -19,7 +19,28 @@ using (HttpClient client = new HttpClient())
         //LinqFilter.FiltrarTodosOsGenerosMusicais(musicas);
         //LinqFilter.FiltrarArtistasPorGeneroMusical(musicas, "pop");
         //LinqFilter.FiltrarMusicasDeUmArtista(musicas, "U2");
-        LinqFilter.FiltrarMusicasPorAno(musicas, "2010");
+        ///LinqFilter.FiltrarMusicasPorAno(musicas, "2010");
+
+
+        //instancar a classe que fiz para adcionar itens e exibir 
+        //var musicarPreferidasDaDi = new MusicasPreferidas("Diele");
+        //musicarPreferidasDaDi.AdicionarMusicasFavoritas(musicas[112]);
+        //musicarPreferidasDaDi.AdicionarMusicasFavoritas(musicas[341]);
+        //musicarPreferidasDaDi.AdicionarMusicasFavoritas(musicas[259]);
+        //musicarPreferidasDaDi.AdicionarMusicasFavoritas(musicas[150]);
+        //musicarPreferidasDaDi.AdicionarMusicasFavoritas(musicas[346]);
+        //musicarPreferidasDaDi.ExibirMusicasPreferidas();
+
+        var musicarPreferidasDeAlguem = new MusicasPreferidas("Alguém");
+        musicarPreferidasDeAlguem.AdicionarMusicasFavoritas(musicas[123]);
+        musicarPreferidasDeAlguem.AdicionarMusicasFavoritas(musicas[514]);
+        musicarPreferidasDeAlguem.AdicionarMusicasFavoritas(musicas[316]);
+        musicarPreferidasDeAlguem.AdicionarMusicasFavoritas(musicas[487]);
+        musicarPreferidasDeAlguem.AdicionarMusicasFavoritas(musicas[218]);
+        musicarPreferidasDeAlguem.ExibirMusicasPreferidas();
+
+        musicarPreferidasDeAlguem.GerarArquivoJson();
+
     }
     catch (Exception ex)
     {
