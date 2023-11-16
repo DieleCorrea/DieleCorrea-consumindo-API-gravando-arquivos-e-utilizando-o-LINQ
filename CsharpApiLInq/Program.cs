@@ -31,15 +31,27 @@ using (HttpClient client = new HttpClient())
         //musicarPreferidasDaDi.AdicionarMusicasFavoritas(musicas[346]);
         //musicarPreferidasDaDi.ExibirMusicasPreferidas();
 
-        var musicarPreferidasDeAlguem = new MusicasPreferidas("Alguém");
-        musicarPreferidasDeAlguem.AdicionarMusicasFavoritas(musicas[123]);
-        musicarPreferidasDeAlguem.AdicionarMusicasFavoritas(musicas[514]);
-        musicarPreferidasDeAlguem.AdicionarMusicasFavoritas(musicas[316]);
-        musicarPreferidasDeAlguem.AdicionarMusicasFavoritas(musicas[487]);
-        musicarPreferidasDeAlguem.AdicionarMusicasFavoritas(musicas[218]);
-        musicarPreferidasDeAlguem.ExibirMusicasPreferidas();
+        //var musicarPreferidasDeAlguem = new MusicasPreferidas("Alguém");
+        //musicarPreferidasDeAlguem.AdicionarMusicasFavoritas(musicas[123]);
+        //musicarPreferidasDeAlguem.AdicionarMusicasFavoritas(musicas[514]);
+        //musicarPreferidasDeAlguem.AdicionarMusicasFavoritas(musicas[316]);
+        //musicarPreferidasDeAlguem.AdicionarMusicasFavoritas(musicas[487]);
+        //musicarPreferidasDeAlguem.AdicionarMusicasFavoritas(musicas[218]);
+        //musicarPreferidasDeAlguem.ExibirMusicasPreferidas();
 
-        musicarPreferidasDeAlguem.GerarArquivoJson();
+        //musicarPreferidasDeAlguem.GerarArquivoJson();
+
+        var musicasFavoritasDoGuilherme = new MusicasPreferidas("Guilherme");
+        musicasFavoritasDoGuilherme.AdicionarMusicasFavoritas(musicas[980]);
+        musicasFavoritasDoGuilherme.AdicionarMusicasFavoritas(musicas[513]);
+        musicasFavoritasDoGuilherme.AdicionarMusicasFavoritas(musicas[1024]);
+        musicasFavoritasDoGuilherme.AdicionarMusicasFavoritas(musicas[999]);
+        musicasFavoritasDoGuilherme.AdicionarMusicasFavoritas(musicas[37]);
+
+        musicasFavoritasDoGuilherme.GerarDocumentoTXTComAsMusicasFavoritas();
+
+
+
 
     }
     catch (Exception ex)
