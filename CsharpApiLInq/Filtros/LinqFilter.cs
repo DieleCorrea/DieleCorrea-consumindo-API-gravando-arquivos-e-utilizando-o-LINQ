@@ -19,15 +19,21 @@ internal class LinqFilter
     }
     public static void FiltrarArtistasPorGeneroMusical(List<Musica> musicas, string genero)
     {
-        var artistasPorGeneroMusical = musicas.Where(musica => musica.Genero!.Contains(genero))
-            .Select(musica => musica.Artista).Distinct().ToList();
+        var artistasPorGeneroMusical = musicas
+            .Where(musica => musica.Genero!
+            .Contains(genero))
+            .Select(musica => musica.Artista)
+            .Distinct().ToList();
         Console.WriteLine($"Exibindo os artstas por gênero musical >>> {genero}");
         foreach( var artista  in artistasPorGeneroMusical) 
         { Console.WriteLine($"-{artista}"); }
     }
     public static void FiltrarMusicasDeUmArtista(List<Musica> musicas, string nomeDoArtista)
     {
-        var musicasDoArtista = musicas.Where(musica => musica.Artista!.Equals(nomeDoArtista)).ToList();
+        var musicasDoArtista = musicas
+            .Where(musica => musica.Artista!
+            .Equals(nomeDoArtista))
+            .ToList();
         Console.WriteLine(nomeDoArtista);
         foreach(var musica in musicasDoArtista)
         {
@@ -36,11 +42,28 @@ internal class LinqFilter
     }
     public static void FiltrarMusicasPorAno(List<Musica> musicas, string anoDaMusica)
     {
-        var musicasPorAno = musicas.Where(musica => musica.AnoString!.Equals(anoDaMusica)).Select(musica => musica.Nome).Distinct().ToList();
+        var musicasPorAno = musicas
+            .Where(musica => musica.AnoString!
+            .Equals(anoDaMusica))
+            .Select(musica => musica.Nome)
+            .Distinct().ToList();
         Console.WriteLine($"Exibindos as musicas mais tocadas de: {anoDaMusica}");
         foreach( var item in musicasPorAno)
         {
             Console.WriteLine($"-{item}");
+        }
+    }
+    public static void ExibirMusicasPorTonalidade(List<Musica> listaDeMusicas, string tipoTonalidade)
+    {
+        var musicaPorTom = listaDeMusicas
+            .Where(x => x.Tonalidade!
+            .Equals(tipoTonalidade))
+            .Select(x => x.Nome)
+            .Distinct().ToList();
+        Console.WriteLine($"Exibindo as musicas pela sua tonalidade >> {tipoTonalidade}");
+        foreach (var item in musicaPorTom)
+        {
+            Console.WriteLine(item);
         }
     }
 
