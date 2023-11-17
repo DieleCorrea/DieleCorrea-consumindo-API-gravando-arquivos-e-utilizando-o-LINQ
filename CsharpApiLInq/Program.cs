@@ -15,8 +15,10 @@ using (HttpClient client = new HttpClient())
         //mas nesse caso estao em json e para isso eu faço uma conversão de json para
         //C# e essa conversão é a deserialização
         #endregion
-        var musicas = JsonSerializer.Deserialize<List<Musica>>(resposta)!;// vai pegar o o meu jso que está na string RESPOSTA e ai converter ele (deserialize) para uma lista do tipo da classe MUSICA e joar para a var musicas 
-        //LinqFilter.FiltrarTodosOsGenerosMusicais(musicas);
+      
+        var musicas = JsonSerializer.Deserialize<List<Musica>>(resposta)!;// vai pegar o o meun jso que está na string RESPOSTA e ai converter ele (deserialize) para uma lista do tipo da classe MUSICA e joar para a var musicas 
+        #region comentarios
+       // LinqFilter.FiltrarTodosOsGenerosMusicais(musicas);
         //LinqFilter.FiltrarArtistasPorGeneroMusical(musicas, "pop");
         //LinqFilter.FiltrarMusicasDeUmArtista(musicas, "U2");
         ///LinqFilter.FiltrarMusicasPorAno(musicas, "2010");
@@ -41,18 +43,18 @@ using (HttpClient client = new HttpClient())
 
         //musicarPreferidasDeAlguem.GerarArquivoJson();
 
-        var musicasFavoritasDoGuilherme = new MusicasPreferidas("Guilherme");
-        musicasFavoritasDoGuilherme.AdicionarMusicasFavoritas(musicas[980]);
-        musicasFavoritasDoGuilherme.AdicionarMusicasFavoritas(musicas[513]);
-        musicasFavoritasDoGuilherme.AdicionarMusicasFavoritas(musicas[1024]);
-        musicasFavoritasDoGuilherme.AdicionarMusicasFavoritas(musicas[999]);
-        musicasFavoritasDoGuilherme.AdicionarMusicasFavoritas(musicas[37]);
+        //var musicasFavoritasDoGuilherme = new MusicasPreferidas("Guilherme");
+        //musicasFavoritasDoGuilherme.AdicionarMusicasFavoritas(musicas[980]);
+        //musicasFavoritasDoGuilherme.AdicionarMusicasFavoritas(musicas[513]);
+        //musicasFavoritasDoGuilherme.AdicionarMusicasFavoritas(musicas[1024]);
+        //musicasFavoritasDoGuilherme.AdicionarMusicasFavoritas(musicas[999]);
+        //musicasFavoritasDoGuilherme.AdicionarMusicasFavoritas(musicas[37]);
 
-        musicasFavoritasDoGuilherme.GerarDocumentoTXTComAsMusicasFavoritas();
+        //musicasFavoritasDoGuilherme.GerarDocumentoTXTComAsMusicasFavoritas();
+        #endregion
 
-
-
-
+        //musicas[0].ExibirDetalhesDamusica();
+        LinqFilter.ExibirMusicasPorTonalidade(musicas, "C");
     }
     catch (Exception ex)
     {
